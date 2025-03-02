@@ -21,5 +21,9 @@ func SetupRouter() *gin.Engine {
 		c.JSON(http.StatusOK, gin.H{"status": "Server is up and running"})
 	})
 
+	r.GET("/extra", func(c *gin.Context) {
+		c.String(http.StatusOK, "this is an extra route\n")
+	})
+
 	return r
 }
