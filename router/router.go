@@ -9,6 +9,10 @@ import (
 func SetupRouter() *gin.Engine {
 	r := gin.Default()
 
+	r.GET("/test", func(c *gin.Context) {
+		c.String(http.StatusOK, "this is a test route\n")
+	})
+
 	r.GET("/hello", func(c *gin.Context) {
 		c.String(http.StatusOK, "Hello World")
 	})
